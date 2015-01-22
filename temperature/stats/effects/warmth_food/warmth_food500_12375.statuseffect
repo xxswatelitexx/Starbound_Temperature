@@ -1,0 +1,17 @@
+{
+  "name" : "warmth_food500_12375",
+
+  "effectConfig" : {
+	"foodTemp" : 100
+	},
+  "defaultDuration" : 10,
+
+  "scripts" : [
+    "warmth_food_12375.lua"
+  ],
+
+  "animationConfig" : "biomecold.animation",
+
+  "label" : "Deadly Chill",
+  "icon" : "/interface/statuses/biomecold.png"
+}

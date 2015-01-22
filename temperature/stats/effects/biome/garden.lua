@@ -3,7 +3,7 @@ function init()
   animator.setParticleEmitterActive("snow", true)
   
   script.setUpdateDelta(5)
-  self.tickTimer2 = 1
+  self.tickTimer = 1
   self.pulseTimer = 0
   self.halfPi = math.pi / 2
   effect.addStatModifierGroup({{stat = "temperatureRate", amount = effect.configParameter("biomeTempRate", 0)}})
@@ -13,17 +13,17 @@ end
 
 function update(dt)
 
-  self.tickTimer2 = self.tickTimer2 - dt
-  if self.tickTimer2 <= 0 then
-    self.tickTimer2 = 1
+  self.tickTimer = self.tickTimer - dt
+  if self.tickTimer <= 0 then
+    self.tickTimer = 1
     if status.resource("temperature") >= bioTemp then
-	status.modifyResourcePercentage("temperature", status.stat("temperatureRate"))
+	status.modifyResource("temperature", status.stat("temperatureRate"))
 	else
-	effect.addStatModifierGroup({{stat = "temperatureRate", amount = 0}})
+	effect.addStatModifierGroup({{stat = "temperatureRate", amount = -(status.stat("temperatureRate"))}})
 	end
 	
 	world.logInfo(status.resource("temperature").." Current Temperature")
-	world.logInfo(tostring(status.resource("temperature") >= 400).."condition of statement")
+	world.logInfo(tostring(status.resource("temperature") >= biomeTemp).."condition of statement")
   end
 
   self.pulseTimer = self.pulseTimer + dt * 2

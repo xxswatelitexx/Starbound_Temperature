@@ -1,0 +1,16 @@
+{
+  "itemName" : "winebottle",
+  "rarity" : "Common",
+  "inventoryIcon" : "winebottle.png",
+  "description" : "A bottle of smooth red wine.",
+  "shortdescription" : "Wine",
+  "handPosition" : [0, -4],
+  "effects" : [ [
+    {
+        "effect" : "warmth_food500_12375",
+        "duration" : 10
+    }
+  ] ],
+  "emote" : "",
+  "emitters" : [ "drinking" ]
+}
