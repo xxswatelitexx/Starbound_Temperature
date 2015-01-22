@@ -1,0 +1,19 @@
+{
+  "name" : "garden",
+  "blockingStat" : "biomecoldImmunity",
+
+  "effectConfig" : {
+  "biomeTemp" : 1000,
+  "biomeTempRate" : -1
+  },
+  "defaultDuration" : 10,
+
+  "scripts" : [
+    "garden.lua"
+  ],
+
+  "animationConfig" : "biomecold.animation",
+
+  "label" : "Deadly Chill",
+  "icon" : "/interface/statuses/biomecold.png"
+}
