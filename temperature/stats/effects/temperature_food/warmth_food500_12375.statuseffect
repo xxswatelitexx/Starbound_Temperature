@@ -1,16 +1,13 @@
 {
-  "name" : "garden",
-  "blockingStat" : "biomecoldImmunity",
+  "name" : "warmth_food500_12375",
 
   "effectConfig" : {
-  "biomeTempLow" : 100,
-	"biomeTempHigh" : 500,
-  "biomeTempRatePerSec" : -10
-  },
+	"foodTemp" : 100
+	},
   "defaultDuration" : 10,
 
   "scripts" : [
-    "garden.lua"
+    "warmth_food_12375.lua"
   ],
 
   "animationConfig" : "biomecold.animation",

@@ -1,0 +1,19 @@
+{
+  "name" : "cold_attack50_12375",
+
+  "effectConfig" : {
+	"coldDMG" : -50,
+	"heatDMG" : 0,
+	"rateModifier" : -5
+	},
+  "defaultDuration" : 2,
+
+  "scripts" : [
+    "temperature_attack_12375.lua"
+  ],
+
+  "animationConfig" : "biomecold.animation",
+
+  "label" : "Deadly Chill",
+  "icon" : "/interface/statuses/biomecold.png"
+}

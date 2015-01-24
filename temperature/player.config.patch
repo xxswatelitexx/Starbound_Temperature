@@ -1,7 +1,7 @@
 [{
 "op" : "add",
 "path" : "/statusControllerSettings/stats/maxTemperature",
-"value" : { "baseValue" : 401}
+"value" : { "baseValue" : 2000}
 }, {
 "op" : "add",
 "path" : "/statusControllerSettings/stats/temperatureRate",
@@ -12,7 +12,29 @@
 "value" : {
         "maxStat" : "maxTemperature",
         "deltaStat" : "temperatureRate",
-        "initialPercentage" : 0.55
+        "initialPercentage" : 1.0
+		} 
+}, {
+"op" : "add",
+"path" : "/statusControllerSettings/stats/armorColdMax",
+"value" : { "baseValue" : 0}
+}, {
+"op" : "add",
+"path" : "/statusControllerSettings/stats/armorHeatMax",
+"value" : { "baseValue" : 0}
+}, {
+"op" : "add",
+"path" : "/statusControllerSettings/resources/armorCold",
+"value" : {
+        "maxStat" : "armorColdMax",
+        "initialPercentage" : 1.0
+		} 
+}, {
+"op" : "add",
+"path" : "/statusControllerSettings/resources/armorHeat",
+"value" : {
+        "maxStat" : "armorHeatMax",
+        "initialPercentage" : 1.0
 		} 
 }
 ]

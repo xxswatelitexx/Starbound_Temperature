@@ -7,7 +7,7 @@
   "handPosition" : [0, -4],
   "effects" : [ [
     {
-        "effect" : "warmth_food500_12375",
+        "effect" : "cold_attack50_12375",
         "duration" : 10
     }
   ] ],
