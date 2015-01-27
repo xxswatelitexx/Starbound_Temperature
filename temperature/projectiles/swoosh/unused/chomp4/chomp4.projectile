@@ -13,6 +13,6 @@
   "flippable" : true,
   "damageKind" : "slash",
 	"statusEffects" : [
-    "cold_attack50_12375"
+    "temperature_coldAttack50"
   ]
 }

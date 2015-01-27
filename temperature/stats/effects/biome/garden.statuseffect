@@ -1,13 +1,12 @@
 {
   "name" : "garden",
-  "blockingStat" : "biomecoldImmunity",
 
   "effectConfig" : {
   "biomeTempLow" : 100,
 	"biomeTempHigh" : 500,
   "biomeTempRatePerSec" : -10
   },
-  "defaultDuration" : 10,
+	"defaultDuration" : 10
 
   "scripts" : [
     "garden.lua"

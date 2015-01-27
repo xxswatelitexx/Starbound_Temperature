@@ -1,40 +1,74 @@
-[{
-"op" : "add",
-"path" : "/statusControllerSettings/stats/maxColdTemperature",
-"value" : { "baseValue" : 2000}
-}, {
-"op" : "add",
-"path" : "/statusControllerSettings/stats/temperatureColdRate",
-"value" : { "baseValue" : 0}
-}, {
-"op" : "add",
-"path" : "/statusControllerSettings/resources/temperatureCold",
-"value" : {
-        "maxStat" : "maxColdTemperature",
-        "deltaStat" : "temperatureColdRate",
-        "initialPercentage" : 0.5
+[ 
+	{
+		"op" : "add",
+		"path" : "/statusControllerSettings/stats/maxTemperature",
+		"value" : { "baseValue" : 9000}
+	},
+	{
+		"op" : "add",
+		"path" : "/statusControllerSettings/stats/rateTemperature",
+		"value" : { "baseValue" : 0}
+	},
+	{
+		"op" : "add",
+		"path" : "/statusControllerSettings/resources/temperature",
+		"value" : {
+       "maxStat" : "maxTemperature",
+       "deltaStat" : "rateTemperature",
+       "initialPercentage" : 1.0
 		} 
-}, {
-"op" : "add",
-"path" : "/statusControllerSettings/stats/armorColdMax",
-"value" : { "baseValue" : 0}
-}, {
-"op" : "add",
-"path" : "/statusControllerSettings/stats/armorHeatMax",
-"value" : { "baseValue" : 0}
-}, {
-"op" : "add",
-"path" : "/statusControllerSettings/resources/armorCold",
-"value" : {
-        "maxStat" : "armorColdMax",
-        "initialPercentage" : 1.0
+	},
+	{
+		"op" : "add",
+		"path" : "/statusControllerSettings/stats/armorColdMax",
+		"value" : { "baseValue" : 0}
+	},
+	{
+		"op" : "add",
+		"path" : "/statusControllerSettings/stats/armorHeatMax",
+		"value" : { "baseValue" : 0}
+	},
+	{
+		"op" : "add",
+		"path" : "/statusControllerSettings/stats/armorColdRate",
+		"value" : { "baseValue" : 0}
+	},
+	{
+		"op" : "add",
+		"path" : "/statusControllerSettings/stats/armorHeatRate",
+		"value" : { "baseValue" : 0}
+	},
+	{
+		"op" : "add",
+		"path" : "/statusControllerSettings/resources/armorCold",
+		"value" : {
+       "maxStat" : "armorColdMax",
+       "deltaStat" : "armorColdRate",
+       "initialPercentage" : 1.0
 		} 
-}, {
-"op" : "add",
-"path" : "/statusControllerSettings/resources/armorHeat",
-"value" : {
-        "maxStat" : "armorHeatMax",
-        "initialPercentage" : 1.0
+	},
+	{
+		"op" : "add",
+		"path" : "/statusControllerSettings/resources/armorHeat",
+		"value" : {
+       "maxStat" : "armorHeatdMax",
+       "deltaStat" : "armorHeatRate",
+       "initialPercentage" : 1.0
 		} 
-}
+	},
+	{
+		"op" : "add",
+		"path" : "/statusControllerSettings/stats/armorPoisonMax",
+		"value" : { "baseValue" : 0}
+	},
+	{
+		"op" : "add",
+		"path" : "/statusControllerSettings/stats/armorAcidMax",
+		"value" : { "baseValue" : 0}
+	},
+	{
+		"op" : "add",
+		"path" : "/statusControllerSettings/stats/armorFireMax",
+		"value" : { "baseValue" : 0}
+	}
 ]

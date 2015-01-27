@@ -1,15 +1,13 @@
 {
-  "name" : "cold_attack50_12375",
+  "name" : "temperature_coldAttack50",
 
   "effectConfig" : {
-	"coldDMG" : -50,
-	"heatDMG" : 0,
-	"rateModifier" : -5
+	"tempModifier" : -50
 	},
-  "defaultDuration" : 2,
+  "defaultDuration" : 10,
 
   "scripts" : [
-    "temperature_attack_12375.lua"
+    "temperature_modifier.lua"
   ],
 
   "animationConfig" : "biomecold.animation",

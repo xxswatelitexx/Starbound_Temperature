@@ -7,8 +7,9 @@
   "handPosition" : [0, -4],
   "effects" : [ [
     {
-        "effect" : "cold_attack50_12375",
-        "duration" : 10
+        "effect" : "temperature_modifier",
+        "duration" : 3,
+				"tempModifier" : 20
     }
   ] ],
   "emote" : "",

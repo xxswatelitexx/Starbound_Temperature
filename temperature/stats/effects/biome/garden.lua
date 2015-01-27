@@ -1,40 +1,39 @@
 function init()
-  animator.setParticleEmitterOffsetRegion("snow", mcontroller.boundBox())
-  animator.setParticleEmitterActive("snow", true)
-  
-  script.setUpdateDelta(5)
-  self.tickTimer = 1
-  self.pulseTimer = 0
-  self.halfPi = math.pi / 2
-	bioTempRate = effect.configParameter("biomeTempRatePerSec", 0) / 2 -- Sets the rate of drop of temperature
-  effect.addStatModifierGroup({{stat = "temperatureColdRate", amount = bioTempRate }}) --Changes Resource Modifier accordingly
-  bioTemp = math.random(effect.configParameter("biomeTempLow", 1000),effect.configParameter("biomeTempHigh", 1000) ) -- Chooses random value between low and high temp
-  --world.logInfo(status.resource("temperature").." Current Temperature")
-	world.setProperty("temperature", 1000)
+	script.setUpdateDelta(5)
+	-- Config Files --
+	self.biomeLow = effect.configParameter("biomeTempLow", 4500)
+	self.biomeHigh = effect.configParameter("biomeTempHigh", 4500)  
+	self.biomeTempRate = effect.configParameter("biomeTempRatePerSec", 0)
+	--Calculations--
+	self.biomeTemp = 200
+	--biomeTemp = math.random(effect.configParameter("biomeTempLow", 1000),effect.configParameter("biomeTempHigh", 1000) )
+  world.setProperty("temperature", biomeTemp)
+	--self.deltaTemperature = (status.stat("rateTemperature") / (effect.duration() * dt)) /2
+	self.tickTime = 1
+	self.tickTimer = self.tickTime
+	
+	-- Logs -- 
+	--world.logInfo(tostring(status.resource("temperature")).." Temperature")
+	--world.logInfo(tostring(self.deltaTemperature).." Delta Temperature")
+	--world.logInfo(tostring(self.biomeLow).." Biome temp low")
+	--world.logInfo(tostring(self.biomeHigh).." Biome temp high")
+	--world.logInfo(tostring(self.biomeTempRate).." Biome temp rate")
+	--world.logInfo(tostring(self.biomeTemp).." Biome Temperature")
 end
 
 function update(dt)
-
   self.tickTimer = self.tickTimer - dt
   if self.tickTimer <= 0 then
-    self.tickTimer = 1
-    if status.resource("temperatureCold") >= bioTemp then -- only drops player temperature to current planet temperature
-	status.modifyResource("temperatureCold", (status.stat("temperatureColdRate") + status.resource("armorCold"))) --keeps dropping temperature using armor to calc protection
-	else
-	effect.addStatModifierGroup({{stat = "temperatureColdRate", amount = -(status.stat("temperatureColdRate"))}}) -- stops temperature dropping when set to planet temperature
-	end
-	--world.logInfo(tostring(status.stat("temperatureRate") + status.resource("armorCold").." Calc Value"))
-	--world.logInfo(status.resource("armorCold").." Cold Armor")
-	--world.logInfo(status.resource("temperatureCold").." Current Temperature")
-	--world.logInfo(tostring(status.resource("temperature") >= bioTemp).."condition of statement")
+    self.tickTimer = self.tickTime
+    if status.resource("temperature") >= self.biomeTemp then 
+		status.modifyResource("temperature", self.biomeTempRate + status.resource("armorCold")) 
+		--world.logInfo(tostring(status.resource("temperature")).." Temperature")
+		--world.logInfo(tostring(self.deltaTemperature + status.resource("armorCold")).." Biome Modifier Calculation")
+		else
+		effect.addStatModifierGroup({{stat = "rateTemperature", amount = -(status.stat("rateTemperature"))}}) 
+		--world.logInfo("Calculation 2 working Temperature")
+		end
   end
-
-  self.pulseTimer = self.pulseTimer + dt * 2
-  if self.pulseTimer >= math.pi then
-    self.pulseTimer = self.pulseTimer - math.pi
-  end
-  local pulseMagnitude = math.floor(math.cos(self.pulseTimer - self.halfPi) * 16) / 16
-  effect.setParentDirectives("fade=AAAAFF="..pulseMagnitude * 0.2 + 0.2)
 end
 
 function uninit()

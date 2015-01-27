@@ -1,12 +1,13 @@
 {
-  "name" : "biomecold",
-  "blockingStat" : "biomecoldImmunity",
+  "name" : "temperature_modifier",
 
-  "effectConfig" : {},
+  "effectConfig" : {
+	"tempModifier" : 50
+	},
   "defaultDuration" : 10,
 
   "scripts" : [
-    "biomecold.lua"
+    "temperature_modifier.lua"
   ],
 
   "animationConfig" : "biomecold.animation",

@@ -1,22 +1,24 @@
 function init()
--- Vanillia 
   self.lastYVelocity = 0
   self.fallDistance = 0
   self.hitInvulnerabilityTime = 0
+
   local ouchNoise = status.statusProperty("ouchNoise")
   if ouchNoise then
     animator.setSoundPool("ouch", {ouchNoise})
   end
-	-- Temperature Code
+	
+	-- Temperature System
 	self.degen = 0.005
   self.tickTimer = 5
-	coldEffect = -(status.resourceMax("temperatureCold") - status.resource("temperatureCold")) / status.resourceMax("temperatureCold")
-	died = true
-	if died then
-		died = false
-		status.setResource("temperatureCold", 1000)
+	coldEffect = -(status.resourceMax("temperature") - status.resource("temperature")) / status.resourceMax("temperature")
+	temperatureReset = ( status.resourceMax("temperature") / 2 )
+	playerDied = true
+	if playerDied then
+		playerDied = false
+		status.setResource("temperature", temperatureReset)
 		end
-	
+	-- Temperature Code End
 end
 
 function applyDamageRequest(damageRequest)
@@ -145,9 +147,9 @@ function update(dt)
   if not status.resourcePositive("energyRegenBlock") then
     status.modifyResourcePercentage("energy", status.stat("energyRegenPercentageRate") * dt)
   end
--- Temperature Code
-  world.logInfo(status.resource("temperatureCold").." Current Temperature")
-  if status.resource("temperatureCold") <= (status.resourceMax("temperatureCold") * 0.55 ) then
+	--Temperature Code
+	--world.logInfo(status.resource("temperature").." Current Temperature")
+  if status.resource("temperature") <= (status.resourceMax("temperature") * 0.25 ) then
   mcontroller.controlModifiers({
       groundMovementModifier = coldEffect,
       runModifier = coldEffect + 0.2,
@@ -155,7 +157,7 @@ function update(dt)
     })
 
   mcontroller.controlParameters({
-      normalGroundFriction = 0.9
+      normalGroundFriction = -(coldEffect)
     })
   
   
@@ -171,11 +173,12 @@ function update(dt)
       })
     end
   end
+	--Temperature Code End ---
 end
 
 function uninit()
   if status.resource("health") == 0 then
   world.logInfo("Player has Died")
-	died = true
+	playerDied = true
   end
 end
