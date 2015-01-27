@@ -1,22 +1,15 @@
 function init()
--- Vanillia 
   self.lastYVelocity = 0
   self.fallDistance = 0
   self.hitInvulnerabilityTime = 0
+  self.degen = 0.005
+  self.tickTimer = 10
+	coldEffect = -((status.resourceMax("temperature") - status.resource("temperature")) / status.resourceMax("temperature))
+
   local ouchNoise = status.statusProperty("ouchNoise")
   if ouchNoise then
     animator.setSoundPool("ouch", {ouchNoise})
   end
-	-- Temperature Code
-	self.degen = 0.005
-  self.tickTimer = 5
-	coldEffect = -(status.resourceMax("temperatureCold") - status.resource("temperatureCold")) / status.resourceMax("temperatureCold")
-	died = true
-	if died then
-		died = false
-		status.setResource("temperatureCold", 1000)
-		end
-	
 end
 
 function applyDamageRequest(damageRequest)
@@ -145,13 +138,12 @@ function update(dt)
   if not status.resourcePositive("energyRegenBlock") then
     status.modifyResourcePercentage("energy", status.stat("energyRegenPercentageRate") * dt)
   end
--- Temperature Code
-  world.logInfo(status.resource("temperatureCold").." Current Temperature")
-  if status.resource("temperatureCold") <= (status.resourceMax("temperatureCold") * 0.55 ) then
+  
+  if status.resource("temperature") <= 380 then
   mcontroller.controlModifiers({
-      groundMovementModifier = coldEffect,
-      runModifier = coldEffect + 0.2,
-      jumpModifier = coldEffect + 0.4
+      groundMovementModifier = -0.9,
+      runModifier = -0.5,
+      jumpModifier = -0.3
     })
 
   mcontroller.controlParameters({
@@ -162,7 +154,7 @@ function update(dt)
   status.modifyResourcePercentage("energy", -self.degen * dt)
   self.tickTimer = self.tickTimer - dt
     if self.tickTimer <= 0 then
-    self.tickTimer = 5
+    self.tickTimer = 1
     self.degen = self.degen + 0.005
     status.applySelfDamageRequest({
         damageType = "IgnoresDef",
@@ -170,12 +162,5 @@ function update(dt)
         sourceEntityId = entity.id()
       })
     end
-  end
-end
-
-function uninit()
-  if status.resource("health") == 0 then
-  world.logInfo("Player has Died")
-	died = true
   end
 end

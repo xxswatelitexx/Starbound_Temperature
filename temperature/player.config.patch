@@ -1,18 +1,18 @@
 [{
 "op" : "add",
-"path" : "/statusControllerSettings/stats/maxTemperature",
+"path" : "/statusControllerSettings/stats/maxColdTemperature",
 "value" : { "baseValue" : 2000}
 }, {
 "op" : "add",
-"path" : "/statusControllerSettings/stats/temperatureRate",
+"path" : "/statusControllerSettings/stats/temperatureColdRate",
 "value" : { "baseValue" : 0}
 }, {
 "op" : "add",
-"path" : "/statusControllerSettings/resources/temperature",
+"path" : "/statusControllerSettings/resources/temperatureCold",
 "value" : {
-        "maxStat" : "maxTemperature",
-        "deltaStat" : "temperatureRate",
-        "initialPercentage" : 1.0
+        "maxStat" : "maxColdTemperature",
+        "deltaStat" : "temperatureColdRate",
+        "initialPercentage" : 0.5
 		} 
 }, {
 "op" : "add",
