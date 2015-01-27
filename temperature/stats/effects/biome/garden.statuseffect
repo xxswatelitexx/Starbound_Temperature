@@ -6,13 +6,11 @@
 	"biomeTempHigh" : 500,
   "biomeTempRatePerSec" : -10
   },
-	"defaultDuration" : 10
+	"defaultDuration" : 10,
 
   "scripts" : [
     "garden.lua"
   ],
-
-  "animationConfig" : "biomecold.animation",
 
   "label" : "Deadly Chill",
   "icon" : "/interface/statuses/biomecold.png"

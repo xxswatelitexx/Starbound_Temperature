@@ -1,0 +1,16 @@
+{
+  "name" : "temperature_modifierObject",
+
+  "effectConfig" : {
+	"tempModifier" : 10,
+	"tempLimiter" : 1200
+	},
+  "defaultDuration" : 10,
+
+  "scripts" : [
+    "temperature_modifierObject.lua"
+  ],
+
+  "label" : "Deadly Chill",
+  "icon" : "/interface/statuses/biomecold.png"
+}
