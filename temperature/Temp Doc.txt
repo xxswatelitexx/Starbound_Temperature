@@ -29,7 +29,7 @@ The players side effects progressively worsens as the players temperature increa
 * biomeTemp - the temperature of the biome (calculated using math.random of bioTempLow and bioTempHigh)
 * self.biomeNight / (biomeTempNight) - lowest possible temperature of Biome 
 * self.biomeDay / (biomeTempDay)- highest possible temperature of Biome
-* biomeTempRate / (biomeTempRatePer10Sec)- the rate at which the players temperature is modified.
+* biomeTempRate / (biomeTempRatePer10Sec)- the rate at which the players temperature is modified. (Positive number only - will automatically adjust based on planet temp) 
 * self.biomeVariation / (biomeTempVariation) - A random variation in temperature which occurs during day and night.
 * --- / (liquidHeat) - Sets the rateTemperature for liquids. rateTemperature modifies rate of change. Negative to promote cold, positive to promote heat.
 
@@ -45,7 +45,7 @@ The players side effects progressively worsens as the players temperature increa
 * self.temperatureMod / ( tempModifier ) = the amount of points to be added to temperature ( negative for cold, positive for heat )
 * effect.duration() / (durationDefault) = the period of time the amount is given
 * self.temperatureMod / (tempModifier) = amount to add / duration (positive for heating, negative for cooling )
-* self.temperatureLimit / (tempLimiter) = heats up only to this amount
+* self.temperatureLimit / (tempLimiter) = heats you up and cools you down based on positive or negative value placed.
 
 
 
@@ -86,6 +86,6 @@ There is a limit in the SB engine which prevents sub biomes from applying temper
 ###CREDITS [ I apologize in advance for Misspelling Names ]
 
 I would like to thank the following people for answering all my crazy doubts and making this possible.
-Metadept, Omnipotententity, Astral, healthire, MrMagical
+Metadept, Omnipotententity, Astraltor, healthire, MrMagical
 
 
