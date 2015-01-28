@@ -2,9 +2,10 @@
   "name" : "garden",
 
   "effectConfig" : {
-  "biomeTempLow" : 100,
-	"biomeTempHigh" : 500,
-  "biomeTempRatePerSec" : -10
+  "biomeTempNight" : 0,
+	"biomeTempDay" : 500,
+  "biomeTempRatePer10Sec" : -10,
+	"biomeTempVariation" : 100
   },
 	"defaultDuration" : 10,
 

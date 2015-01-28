@@ -1,0 +1,13 @@
+{
+  "name" : "wet",
+  "effectConfig" : {
+	"liquidHeat" : -2
+	},
+  "defaultDuration" : 10,
+
+  "scripts" : [
+    "wet.lua"
+  ],
+
+  "animationConfig" : "wet.animation"
+}

@@ -7,9 +7,9 @@ end
 
 function update(dt)
 	if status.resource("temperature") <= 9000 then
-	status.modifyResource("temperature", self.temperatureMod * dt)
-	self.tickTimer = self.tickTimer - dt
+	status.modifyResource("temperature", self.temperatureMod * dt)	
 	end
+	
 	self.tickTimer = self.tickTimer - dt
 	if self.tickTimer <= 0 then
 	self.tickTimer = 1

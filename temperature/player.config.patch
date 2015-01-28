@@ -2,7 +2,7 @@
 	{
 		"op" : "add",
 		"path" : "/statusControllerSettings/stats/maxTemperature",
-		"value" : { "baseValue" : 9000}
+		"value" : { "baseValue" : 6000}
 	},
 	{
 		"op" : "add",

@@ -178,7 +178,7 @@ end
 
 function uninit()
   if status.resource("health") == 0 then
-  world.logInfo("Player has Died")
+  --world.logInfo("Player has Died")
 	playerDied = true
   end
 end
