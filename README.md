@@ -27,9 +27,11 @@ The players side effects progressively worsens as the players temperature increa
 ###BIOME LUA / (JSON) VARIABLES
 
 * biomeTemp - the temperature of the biome (calculated using math.random of bioTempLow and bioTempHigh)
-* bioLow / (biomeTempLow) - lowest possible temperature of Biome 
-* bioHigh / (biomeTempHigh)- highest possible temperature of Biome
-* biomeTempRate / (biomeTempRatePerSec)- the rate at which the players temperature is modified.
+* self.biomeNight / (biomeTempNight) - lowest possible temperature of Biome 
+* self.biomeDay / (biomeTempDay)- highest possible temperature of Biome
+* biomeTempRate / (biomeTempRatePer10Sec)- the rate at which the players temperature is modified. (Positive number only - will automatically adjust based on planet temp) 
+* self.biomeVariation / (biomeTempVariation) - A random variation in temperature which occurs during day and night.
+* --- / (liquidHeat) - Sets the rateTemperature for liquids. rateTemperature modifies rate of change. Negative to promote cold, positive to promote heat.
 
 ###WORLD VARIABLES (world.getProperty())
 
@@ -40,10 +42,10 @@ The players side effects progressively worsens as the players temperature increa
 ####TEMPERATURE_MODIFIER / (JSON) - Description
 
 * self.temperatureRateMod / ( rateModifier ) = rate at which temperature changes (negative for cold, positive for heat )
-*  self.temperatureMod / ( tempModifier ) = the amount of points to be added to temperature ( negative for cold, positive for heat )
+* self.temperatureMod / ( tempModifier ) = the amount of points to be added to temperature ( negative for cold, positive for heat )
 * effect.duration() / (durationDefault) = the period of time the amount is given
 * self.temperatureMod / (tempModifier) = amount to add / duration (positive for heating, negative for cooling )
-* self.temperatureLimit / (tempLimiter) = heats up only to this amount
+* self.temperatureLimit / (tempLimiter) = heats you up and cools you down based on positive or negative value placed.
 
 
 
@@ -79,11 +81,9 @@ Resistance is applied prior to calculation. damage applied + modifier
 * armorFireMax = Positive number blocks fire damage. Negative adds exponentially to fire damage
 
 ###KNOWN ISSUES
-
-One problem is these indicators will not show on your character screen. It is recommended you add it in descriptions. 
-As far as I am aware you cannot modify the character screen yet. Though the image asset ui.png is found in the interface folder.
+There is a limit in the SB engine which prevents sub biomes from applying temperature modifications. So only global biome temperature will be applied.
 
 ###CREDITS [ I apologize in advance for Misspelling Names ]
 
 I would like to thank the following people for answering all my crazy doubts and making this possible.
-Metadept, Omnipotententity, Astral, healthire, MrMagical
+Metadept, Omnipotententity, Astraltor, healthire, MrMagical
