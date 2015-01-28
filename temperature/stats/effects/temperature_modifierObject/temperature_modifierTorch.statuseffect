@@ -1,9 +1,9 @@
 {
-  "name" : "temperature_modifierObject",
+  "name" : "temperature_modifierTorch",
 
   "effectConfig" : {
-	"tempModifier" : -1000,
-	"tempLimiter" : -1
+	"tempModifier" : 50,
+	"tempLimiter" : 300
 	},
   "defaultDuration" : 10,
 

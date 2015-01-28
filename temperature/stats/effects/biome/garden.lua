@@ -10,7 +10,7 @@ function init()
 	biomeTempCheck = biomeTemp
   world.setProperty("biomeTemperature", biomeTemp)
 	world.setProperty("biomeRate", self.biomeTempRate)
-	self.tickTimer2 = 60
+	self.tickTimer2 = 30
 	self.tickTimer = 10
 	--Calculations--
 	if world.timeOfDay() <= 0.5 then
@@ -33,7 +33,7 @@ function update(dt)
 	--Temperature Randomization based on Day and Night Updated every 60 seconds--
 	self.tickTimer2 = self.tickTimer2 - dt
 	if self.tickTimer2 <= 0 then
-	self.tickTimer2 = 60
+	self.tickTimer2 = 30
 		if world.timeOfDay() <= 0.5 and biomeTime == true then
 			biomeTemp = math.abs(math.random(self.biomeDay - 100, self.biomeDay + 100))
 			world.setProperty("biomeTemperature", biomeTemp)
@@ -52,10 +52,16 @@ function update(dt)
   if self.tickTimer <= 0 then
     self.tickTimer = 10
     if status.resource("temperature") >= biomeTemp then 
+		status.modifyResource("temperature", self.biomeTempRate - status.resource("armorCold")) 
+		world.logInfo(tostring(status.resource("temperature")).." Temperature")
+		--world.logInfo(tostring(self.deltaTemperature + status.resource("armorCold")).." Biome Modifier Calculation")
+		else return
+		end
+	else
+		if status.resource("temperature") <= biomeTemp then 
 		status.modifyResource("temperature", self.biomeTempRate + status.resource("armorCold")) 
 		world.logInfo(tostring(status.resource("temperature")).." Temperature")
-		world.logInfo(tostring(world.time).." epoch Time")
-		--world.logInfo(tostring(self.deltaTemperature + status.resource("armorCold")).." Biome Modifier Calculation")
+		else return
 		end
 	end
   

@@ -7,5 +7,5 @@
 
   "actionOnReap" : [ { "action" : "liquid", "liquid" : "water", "quantity" : 0.4 } ],
 
-  "onlyHitTerrain" : false
+  "onlyHitTerrain" : true
 }

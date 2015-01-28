@@ -10,9 +10,9 @@ function init()
 	
 	-- Temperature System
 	self.degen = 0.005
-  self.tickTimer = 5
-	coldEffect = -(status.resourceMax("temperature") - status.resource("temperature")) / status.resourceMax("temperature")
-	temperatureReset = ( status.resourceMax("temperature") / 2 )
+  self.tickTimer = 2
+	coldEffect = -((status.resourceMax("temperature") * 0.33 ) - status.resource("temperature")) / (status.resourceMax("temperature") * 0.33)
+	temperatureReset = ( status.resourceMax("temperature") * 0.5 )
 	playerDied = true
 	if playerDied then
 		playerDied = false
@@ -164,7 +164,7 @@ function update(dt)
   status.modifyResourcePercentage("energy", -self.degen * dt)
   self.tickTimer = self.tickTimer - dt
     if self.tickTimer <= 0 then
-    self.tickTimer = 5
+    self.tickTimer = 2
     self.degen = self.degen + 0.005
     status.applySelfDamageRequest({
         damageType = "IgnoresDef",

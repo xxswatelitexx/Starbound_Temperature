@@ -1,5 +1,5 @@
 [{
 "op": "add",
 "path" : "/statusEffects",
-"value" : [ "temperature_modifierObject" ]
+"value" : [ "temperature_modifierTorch" ]
 } ]
