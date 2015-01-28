@@ -4,8 +4,9 @@
   "frames" : "water.png",
   "animationCycle" : 0.5,
   "frameNumber" : 2,
+	"statusEffects" : [
+    "wet"
+  ],
 
-  "actionOnReap" : [ { "action" : "liquid", "liquid" : "water", "quantity" : 0.4 } ],
-
-  "onlyHitTerrain" : true
+  "onlyHitTerrain" : false
 }

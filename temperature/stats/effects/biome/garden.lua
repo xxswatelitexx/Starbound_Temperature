@@ -59,17 +59,17 @@ function update(dt)
 	self.tickTimer = self.tickTimer - dt
   if self.tickTimer <= 0 then
     self.tickTimer = 5
-    world.logInfo(tostring(world.day()).." day")
+    --world.logInfo(tostring(world.day()).." day")
 		if status.resource("temperature") >= biomeTemp then 
 		status.modifyResource("temperature", self.biomeTempRate - status.resource("armorCold")) 
-		world.logInfo(tostring(status.resource("temperature")).." Temperature")
+		--world.logInfo(tostring(status.resource("temperature")).." Temperature")
 		--world.logInfo(tostring(self.deltaTemperature + status.resource("armorCold")).." Biome Modifier Calculation")
 		else return
 		end
 	else
 		if status.resource("temperature") <= biomeTemp then 
 		status.modifyResource("temperature", self.biomeTempRate + status.resource("armorCold")) 
-		world.logInfo(tostring(status.resource("temperature")).." Temperature")
+		--world.logInfo(tostring(status.resource("temperature")).." Temperature")
 		else return
 		end
 	end

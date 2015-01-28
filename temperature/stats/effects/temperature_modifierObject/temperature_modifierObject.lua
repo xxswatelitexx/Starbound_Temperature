@@ -22,8 +22,8 @@ end
 	self.tickTimer = self.tickTimer - dt
 	if self.tickTimer <= 0 then
 	self.tickTimer = 1
-    world.logInfo(status.resource("temperature").." Temperature after Effect")
-		world.logInfo(tostring(self.temperatureMod * dt).." Effect Calculation")
+    --world.logInfo(status.resource("temperature").." Temperature after Effect")
+		--world.logInfo(tostring(self.temperatureMod * dt).." Effect Calculation")
   end
 	
 end

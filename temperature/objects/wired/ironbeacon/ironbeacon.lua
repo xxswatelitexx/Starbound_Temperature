@@ -3,6 +3,6 @@ function init(args)
 end
 
 function onInteraction(args)
-	return { "ShowPopup", { message = "Temperature: "..tostring(world.getProperty("biomeTemperature")).."\nWind Chill: "..tostring(world.getProperty("biomeRate")) } }
+	return { "ShowPopup", { message = "^red;Temperature:^white; "..tostring(world.getProperty("biomeTemperature")).."\n^red;Wind Chill:^white; "..tostring(world.getProperty("biomeRate")) } }
 	
 end
