@@ -8,6 +8,8 @@ The players side effects progressively worsens as the players temperature increa
 
 ###PLAYER_PRIMARY UNIQUE VARIABLES
 * playerDied - checks if player has died and resets on revive to false.
+* coldEffect - calculates the amount of negative effect per unit of cold. [ Defined as temperature being < 25% of Max temperature ] 
+* heatEffect - calculates the amount of negative effect per unit of heat. [ Defined as temperature being > 75% of Max temperature ]
 
 ###STAT's
 

@@ -5,7 +5,7 @@ function init()
 	self.biomeDay = effect.configParameter("biomeTempDay", 0)  
 	self.biomeTempRate = effect.configParameter("biomeTempRatePer10Sec", 0)
 	self.biomeVariation = effect.configParameter("biomeTempVariation", 100)
-	--Calculations--
+	--Variable Set--
 	biomeTemp = effect.configParameter("biomeTempNight", 0)
 	biomeTempCheck = biomeTemp
   world.setProperty("biomeTemperature", biomeTemp)
@@ -13,7 +13,6 @@ function init()
 	self.tickTimer2 = 20
 	self.tickTimer = 5
 	self.biomeDate = world.day()
-	--Calculations--
 
 	
 	-- Logs -- 
