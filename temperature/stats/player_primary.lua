@@ -7,22 +7,15 @@ function init()
   if ouchNoise then
     animator.setSoundPool("ouch", {ouchNoise})
   end
-	
-	-- Temperature System
-	self.degen = 0.005
-  self.tickTimerC = 2
-	self.tickTimerH = 1
-	self.tickTimerVx = 2
-	self.tickTimerVx2 = 1
-	self.Vx2 = 0
-	self.xVelocityLast = 0
-	temperatureReset = ( status.resourceMax("temperature") * 0.5 )
+	-- Checks if player has died
+	temperatureReset = status.resourceMax("temperature") * 0.26
 	playerDied = true
 	if playerDied then
 		playerDied = false
 		status.setResource("temperature", temperatureReset)
+		self.Tx = 0
+		self.Txc = 0
 		end
-	-- Temperature Code End
 end
 
 function applyDamageRequest(damageRequest)
@@ -151,75 +144,6 @@ function update(dt)
   if not status.resourcePositive("energyRegenBlock") then
     status.modifyResourcePercentage("energy", status.stat("energyRegenPercentageRate") * dt)
   end
-	--Temperature Code
-	--world.logInfo(status.resource("temperature").." Current Temperature")
-  --COLD SCRIPT--
-	if status.resource("temperature") <= (status.resourceMax("temperature") * 0.25 ) then
-		local coldEffect = -((status.resourceMax("temperature") * 0.33 ) - status.resource("temperature")) / (status.resourceMax("temperature") * 0.33)
-		mcontroller.controlModifiers({
-      groundMovementModifier = coldEffect,
-      runModifier = coldEffect + 0.2,
-      jumpModifier = coldEffect + 0.4
-    })
-
-  mcontroller.controlParameters({
-      normalGroundFriction = -(coldEffect)
-    })
-  
-
-  self.tickTimerC = self.tickTimerC - dt
-    if self.tickTimerC <= 0 then
-    self.tickTimerC = 2
-    self.degen = self.degen + 0.005
-    status.applySelfDamageRequest({
-        damageType = "IgnoresDef",
-        damage = self.degen * status.resourceMax("health"),
-        sourceEntityId = entity.id()
-      })
-    end
-  end
-	
-	self.xVelocity = math.abs(mcontroller.xVelocity())
-	self.tickTimerVx2 = self.tickTimerVx2 - dt
-	if 	self.xVelocityLast < self.xVelocity and self.tickTimerVx2 <= 0 then
-			world.logInfo("step 3 check")
-			self.tickTimerVx2 = 1
-			self.Vx2 = self.Vx2 - 0.25
-			status.modifyResource("breath", (-status.stat("breathDepletionRate") * dt) + self.Vx2)
-			self.degen = self.degen + 0.005
-			status.applySelfDamageRequest({
-        damageType = "IgnoresDef",
-        damage = self.degen * status.resourceMax("health"),
-        sourceEntityId = entity.id()
-      })
-		else
-		self.Vx2 = 0
-		self.degen = self.degen - 0.005
-	end	
-
-	self.xVelocityLast = self.xVelocity
-		
-	--HEAT SCRIPT--
-	  if status.resource("temperature") >= (status.resourceMax("temperature") * 0.75 ) then
-		heatEffect = (status.resourceMax("temperature") - status.resource("temperature") ) / (status.resourceMax("temperature"))
-		mcontroller.controlModifiers({
-      groundMovementModifier = heatEffect,
-      runModifier = heatEffect,
-      jumpModifier = -(heatEffect) - 0.4
-    })
-  
-  self.tickTimerH = self.tickTimerH - dt
-    if self.tickTimerH <= 0 then
-    self.tickTimerH = 1
-    self.degen = self.degen + 0.005
-    status.applySelfDamageRequest({
-        damageType = "IgnoresDef",
-        damage = self.degen * status.resourceMax("health"),
-        sourceEntityId = entity.id()
-      })
-    end
-  end
-	--Temperature Code End ---
 end
 
 function uninit()

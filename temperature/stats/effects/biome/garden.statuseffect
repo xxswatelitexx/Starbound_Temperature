@@ -3,8 +3,8 @@
 
   "effectConfig" : {
   "biomeTempNight" : 0,
-	"biomeTempDay" : 4500,
-  "biomeTempRatePer10Sec" : 10,
+	"biomeTempDay" : 100,
+  "biomeTempRatePer10Sec" : 100,
 	"biomeTempVariation" : 100
   },
 	"defaultDuration" : 10,

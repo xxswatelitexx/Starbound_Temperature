@@ -8,5 +8,5 @@ function update(dt)
 end
 
 function uninit()
-effect.addStatModifierGroup({{stat = "rateTemperature", amount = -(status.stat("rateTemperature"))}})
+effect.addStatModifierGroup({{stat = "rateTemperature", amount = status.stat("rateTemperature")}})
 end
