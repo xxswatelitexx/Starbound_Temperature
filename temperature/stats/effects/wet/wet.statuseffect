@@ -1,7 +1,7 @@
 {
   "name" : "wet",
   "effectConfig" : {
-	"liquidHeat" : -5
+	"liquidTemp" : -5
 	},
   "defaultDuration" : 10,
 

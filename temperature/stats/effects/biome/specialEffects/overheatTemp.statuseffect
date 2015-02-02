@@ -1,0 +1,15 @@
+{
+  "name" : "overheatTemp",
+
+  "effectConfig" : {},
+  "defaultDuration" : 10,
+
+  "scripts" : [
+    "overheatTemp.lua"
+  ],
+
+  "animationConfig" : "biomeheat.animation",
+
+  "label" : "Deadly Heat",
+  "icon" : "/interface/statuses/biomeheat.png"
+}

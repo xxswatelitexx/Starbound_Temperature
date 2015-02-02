@@ -1,11 +1,11 @@
 {
-  "name" : "biomecold",
+  "name" : "freezingTemp",
 
   "effectConfig" : {},
   "defaultDuration" : 10,
 
   "scripts" : [
-    "biomecold.lua"
+    "freezingTemp.lua"
   ],
 
   "animationConfig" : "biomecold.animation",

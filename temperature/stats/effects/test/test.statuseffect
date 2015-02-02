@@ -1,0 +1,10 @@
+{
+  "name" : "test",
+  "effectConfig" : {
+	},
+  "defaultDuration" : 10,
+
+  "scripts" : [
+    "test.lua"
+  ]
+}

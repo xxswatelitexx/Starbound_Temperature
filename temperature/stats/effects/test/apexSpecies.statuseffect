@@ -1,0 +1,10 @@
+{
+  "name" : "apexSpecies",
+  "effectConfig" : {
+	},
+  "defaultDuration" : 10,
+
+  "scripts" : [
+    "apexSpecies.lua"
+  ]
+}

@@ -2,20 +2,15 @@ function init()
   self.lastYVelocity = 0
   self.fallDistance = 0
   self.hitInvulnerabilityTime = 0
+	
+	self.coldLimit = status.resourceMax("temperature") * 0.25
+	self.heatLimit = status.resourceMax("temperature") * 0.75
+	self.temperature = status.resource("temperature")
 
   local ouchNoise = status.statusProperty("ouchNoise")
   if ouchNoise then
     animator.setSoundPool("ouch", {ouchNoise})
   end
-	-- Checks if player has died
-	temperatureReset = status.resourceMax("temperature") * 0.26
-	playerDied = true
-	if playerDied then
-		playerDied = false
-		status.setResource("temperature", temperatureReset)
-		self.Tx = 0
-		self.Txc = 0
-		end
 end
 
 function applyDamageRequest(damageRequest)
@@ -147,8 +142,4 @@ function update(dt)
 end
 
 function uninit()
-  if status.resource("health") == 0 then
-  --world.logInfo("Player has Died")
-	playerDied = true
-  end
 end
