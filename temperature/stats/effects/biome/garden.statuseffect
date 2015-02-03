@@ -2,8 +2,8 @@
   "name" : "garden",
 
   "effectConfig" : {
-  "biomeTempNight" : 0,
-	"biomeTempDay" : 100,
+  "biomeTempNight" : 4500,
+	"biomeTempDay" : 6000,
   "biomeTempRatePer10Sec" : 100,
 	"biomeTempVariation" : 100
   },
@@ -13,6 +13,6 @@
     "garden.lua"
   ],
 
-  "label" : "Deadly Chill",
-  "icon" : "/interface/statuses/biomecold.png"
+  "label" : "Cold Biome",
+  "icon" : "/interface/statuses/tempBiomeCold.png"
 }

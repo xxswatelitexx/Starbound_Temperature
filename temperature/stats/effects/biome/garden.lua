@@ -12,7 +12,6 @@ function init()
 	world.setProperty("biomeRate", self.biomeTempRate)
 	self.biomeTimer = 1
 	self.biomeDate = world.day()
-  world.logInfo("test")
 	 
 end
 
