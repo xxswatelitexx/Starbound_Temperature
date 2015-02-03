@@ -16,6 +16,8 @@ function update(dt)
   end
   local pulseMagnitude = math.floor(math.cos(self.pulseTimer - self.halfPi) * 16) / 16
   effect.setParentDirectives("fade=AA0000="..pulseMagnitude * 0.4 + 0.2)
+	
+	
 end
 
 function uninit()
