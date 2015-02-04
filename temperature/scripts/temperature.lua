@@ -27,8 +27,8 @@ function update(dt)
 	self.timerTx = self.timerTx - dt
 	if self.timerTx <= 0 then
 	self.timerTx = 5
-	world.logInfo(tostring(status.resource("temperature")).." Temperature Player")
-	world.logInfo(tostring(status.stat("temperatureRate")).." TemperatureRate Player")
+	--world.logInfo(tostring(status.resource("temperature")).." Temperature Player")
+	--world.logInfo(tostring(status.stat("temperatureRate")).." TemperatureRate Player")
 		if status.resource("temperature") < self.temperatureCold then
 		status.addEphemeralEffect("freezingTemp")
 		self.tempMod = self.tempMod - 0.1
