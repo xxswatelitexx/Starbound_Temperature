@@ -7,9 +7,9 @@
   "handPosition" : [0, -4],
   "effects" : [ [
     {
-        "effect" : "temperature_modifier",
-        "duration" : 3,
-				"tempModifier" : 20
+        "effect" : "foodTempHot",
+        "duration" : 15,
+				"foodTemp" : 200
     }
   ] ],
   "emote" : "",

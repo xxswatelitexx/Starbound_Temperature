@@ -3,7 +3,7 @@
 "path" : "/projectiles/-",
 "value" : 
 {
-      "projectile" : "rainTemp",
+      "projectile" : "snowTemp",
       "parameters" : {
         "power" : 0
       },

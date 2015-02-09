@@ -15,7 +15,7 @@
 		"value" : {
        "maxStat" : "maxTemperature",
        "deltaStat" : "rateTemperature",
-       "initialPercentage" : 0.5
+       "initialPercentage" : 1
 		} 
 	},
 	{

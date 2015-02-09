@@ -1,0 +1,17 @@
+{
+  "name" : "savannah",
+
+  "effectConfig" : {
+  "biomeTempNight" : 1900,
+	"biomeTempDay" : 4800,
+  "biomeTempRatePer10Sec" : 110
+  },
+	"defaultDuration" : 10,
+
+  "scripts" : [
+    "biomeTemperature.lua"
+  ],
+
+  "label" : "Moderate Biome",
+  "icon" : "/interface/statuses/tempBiomeModerate.png"
+}

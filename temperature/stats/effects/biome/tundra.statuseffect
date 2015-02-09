@@ -1,0 +1,17 @@
+{
+  "name" : "tundra",
+
+  "effectConfig" : {
+  "biomeTempNight" : 800,
+	"biomeTempDay" : 2500,
+  "biomeTempRatePer10Sec" : 120
+  },
+	"defaultDuration" : 10,
+
+  "scripts" : [
+    "biomeTemperature.lua"
+  ],
+
+  "label" : "Cold Biome",
+  "icon" : "/interface/statuses/tempBiomeCold.png"
+}

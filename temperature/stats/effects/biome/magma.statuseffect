@@ -1,0 +1,17 @@
+{
+  "name" : "magma",
+
+  "effectConfig" : {
+  "biomeTempNight" : 4500,
+	"biomeTempDay" : 6000,
+  "biomeTempRatePer10Sec" : 275
+  },
+	"defaultDuration" : 10,
+
+  "scripts" : [
+    "biomeTemperature.lua"
+  ],
+
+  "label" : "Hot Biome",
+  "icon" : "/interface/statuses/tempBiomeHot.png"
+}

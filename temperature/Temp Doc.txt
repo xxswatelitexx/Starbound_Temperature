@@ -23,8 +23,8 @@ The players side effects progressively worsens as the players temperature increa
 ###RESOURCES
 
 * temperature - current temperature of player
-* armorHeat - current heat protection of player
-* armorCold - current cold protection of player
+* armorHeat - percentage of protection against element
+* armorCold - percentage of protection against element
 
 ###BIOME LUA / (JSON) VARIABLES
 

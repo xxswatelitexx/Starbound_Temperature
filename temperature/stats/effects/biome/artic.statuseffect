@@ -1,0 +1,17 @@
+{
+  "name" : "artic",
+
+  "effectConfig" : {
+  "biomeTempNight" : 0,
+	"biomeTempDay" : 1000,
+  "biomeTempRatePer10Sec" : 200
+  },
+	"defaultDuration" : 10,
+
+  "scripts" : [
+    "biomeTemperature.lua"
+  ],
+
+  "label" : "Cold Biome",
+  "icon" : "/interface/statuses/tempBiomeCold.png"
+}

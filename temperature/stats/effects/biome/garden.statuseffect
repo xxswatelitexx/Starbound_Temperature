@@ -2,14 +2,14 @@
   "name" : "garden",
 
   "effectConfig" : {
-  "biomeTempNight" : 4500,
-	"biomeTempDay" : 6000,
-  "biomeTempRatePer10Sec" : 100
+  "biomeTempNight" : 2400,
+	"biomeTempDay" : 3600,
+  "biomeTempRatePer10Sec" : 50
   },
 	"defaultDuration" : 10,
 
   "scripts" : [
-    "garden.lua"
+    "biomeTemperature.lua"
   ],
 
   "label" : "Cold Biome",

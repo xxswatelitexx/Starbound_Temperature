@@ -6,13 +6,13 @@ function init()
 	-- Temperature System
 	-- Temperature Code End
 	self.timerTx = 5
-	self.tempMod = 0
-	self.degenPl = 0
+	tempMod = 0
+	tempDegenPL = 0
 	self.tickTimer = 1
 	self.playerDied = true
-	if self.playerDied == true then
+	if playerDied == true then
 		status.setResource("temperature", status.resourceMax("temperature") * 0.5)
-		playerDied = false
+		self.playerDied = false
 	end
 end
 
@@ -20,51 +20,56 @@ end
 function update(dt)
 	oldUpdate(dt)
 	--Temperature Code
-	self.temperatureCold = status.resourceMax("temperature") * 0.25
-	self.temperatureHeat = status.resourceMax("temperature") * 0.75
-	self.tempReset = status.resourceMax("temperature") * 0.5
 	
 	self.timerTx = self.timerTx - dt
 	if self.timerTx <= 0 then
 	self.timerTx = 5
-	--world.logInfo(tostring(status.resource("temperature")).." Temperature Player")
-	--world.logInfo(tostring(status.stat("temperatureRate")).." TemperatureRate Player")
-		if status.resource("temperature") < self.temperatureCold then
+	world.logInfo(tostring(status.resource("temperature")).." Player Temperature")
+	world.logInfo(tostring(status.stat("armorColdMax")).." Armor Cold Max")
+		if status.resource("temperature") < status.resourceMax("temperature") * 0.25 then
 		status.addEphemeralEffect("freezingTemp")
-		self.tempMod = self.tempMod - 0.1
-		self.tempModGF = self.tempMod
-		--world.logInfo("cold test")
-		else if status.resource("temperature") > self.temperatureHeat then
+		tempMod = tempMod - 0.1
+		tempModGF = tempMod
+		tempDegenPL = tempDegenPL + 0.005
+		damageTemp(tempDegenPL)
+		else if status.resource("temperature") > status.resourceMax("temperature") * 0.75 then
 		status.addEphemeralEffect("overheatTemp")
-		self.tempMod = self.tempMod + 0.1
+		tempMod = tempMod + 0.1
+		tempDegenPL = tempDegenPL + 0.005
+		damageTemp(tempDegenPL)
 		--world.logInfo("heat test")
+		
 		else
-		self.tempMod = 0
-		self.degenPl = 0
+		tempMod = 0
+		tempDegenPL = 0
 		end
 		end	
 	end
+
+	function damageTemp(tempDegenPL)
+		self.tickTimer = self.tickTimer - dt
+		if self.tickTimer <= 0 then
+			self.tickTimer = 1
+    
+			status.applySelfDamageRequest({
+        damageType = "IgnoresDef",
+        damage = tempDegenPL * status.resourceMax("health"),
+        sourceEntityId = entity.id()
+      })
+		end
+	end
 	
 	  mcontroller.controlModifiers({
-      groundMovementModifier = self.tempMod,
-      runModifier = self.tempMod,
-      jumpModifier = self.tempMod
+      groundMovementModifier = tempMod,
+      runModifier = tempMod,
+      jumpModifier = tempMod
     })
 
   mcontroller.controlParameters({
-      normalGroundFriction = self.tempModGF
+      normalGroundFriction = tempModGF
     })
 	
-	self.tickTimer = self.tickTimer - dt
-	if self.tickTimer <= 0 then
-    self.tickTimer = 1
-    self.degenPl = self.degenPl + 0.005
-    status.applySelfDamageRequest({
-        damageType = "IgnoresDef",
-        damage = self.degenPl * status.resourceMax("health"),
-        sourceEntityId = entity.id()
-      })
-  end
+
 	
 	
 	if status.resource("health") <= 0 then

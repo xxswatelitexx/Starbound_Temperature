@@ -1,0 +1,15 @@
+{
+  "name" : "foodTempCold",
+
+  "effectConfig" : {
+	"foodTemp" : -100
+	},
+  "defaultDuration" : 10,
+
+  "scripts" : [
+    "foodTemp.lua"
+  ],
+
+  "label" : "Cold Food",
+  "icon" : "/interface/statuses/coldFood.png"
+}

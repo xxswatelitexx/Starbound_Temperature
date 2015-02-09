@@ -1,0 +1,13 @@
+{
+  "name" : "snowTemp",
+  "effectConfig" : {
+	"liquidTemp" : -12.5
+	},
+  "defaultDuration" : 10,
+
+  "scripts" : [
+    "temperature_enviroment.lua"
+  ],
+
+  "animationConfig" : "snow.animation"
+}

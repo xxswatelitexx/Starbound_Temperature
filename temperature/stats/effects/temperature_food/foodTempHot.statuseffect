@@ -1,0 +1,15 @@
+{
+  "name" : "foodTempHot",
+
+  "effectConfig" : {
+	"foodTemp" : 100
+	},
+  "defaultDuration" : 10,
+
+  "scripts" : [
+    "foodTemp.lua"
+  ],
+
+  "label" : "Warm Food",
+  "icon" : "/interface/statuses/hotFood.png"
+}

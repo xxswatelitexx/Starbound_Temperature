@@ -1,0 +1,17 @@
+{
+  "name" : "scorched",
+
+  "effectConfig" : {
+  "biomeTempNight" : 4000,
+	"biomeTempDay" : 5500,
+  "biomeTempRatePer10Sec" : 225
+  },
+	"defaultDuration" : 10,
+
+  "scripts" : [
+    "biomeTemperature.lua"
+  ],
+
+  "label" : "Hot Biome",
+  "icon" : "/interface/statuses/tempBiomeHot.png"
+}

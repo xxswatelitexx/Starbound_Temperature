@@ -1,0 +1,17 @@
+{
+  "name" : "volcanic",
+
+  "effectConfig" : {
+  "biomeTempNight" : 4000,
+	"biomeTempDay" : 5500,
+  "biomeTempRatePer10Sec" : 250
+  },
+	"defaultDuration" : 10,
+
+  "scripts" : [
+    "biomeTemperature.lua"
+  ],
+
+  "label" : "Hot Biome",
+  "icon" : "/interface/statuses/tempBiomeHot.png"
+}

@@ -2,16 +2,14 @@
   "name" : "temperature_modifier",
 
   "effectConfig" : {
-	"tempModifier" : 50
+	"tempModifier" : 200
 	},
   "defaultDuration" : 10,
 
   "scripts" : [
     "temperature_modifier.lua"
   ],
-
-  "animationConfig" : "biomecold.animation",
-
-  "label" : "Deadly Chill",
-  "icon" : "/interface/statuses/biomecold.png"
+	
+  "label" : "Warm Food",
+  "icon" : "/interface/statuses/warmFood.png"
 }

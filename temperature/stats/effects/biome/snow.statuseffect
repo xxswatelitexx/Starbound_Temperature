@@ -1,0 +1,17 @@
+{
+  "name" : "snow",
+
+  "effectConfig" : {
+  "biomeTempNight" : 800,
+	"biomeTempDay" : 2000,
+  "biomeTempRatePer10Sec" : 100
+  },
+	"defaultDuration" : 10,
+
+  "scripts" : [
+    "biomeTemperature.lua"
+  ],
+
+  "label" : "Cold Biome",
+  "icon" : "/interface/statuses/tempBiomeCold.png"
+}

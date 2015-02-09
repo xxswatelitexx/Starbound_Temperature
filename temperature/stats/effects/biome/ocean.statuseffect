@@ -1,0 +1,17 @@
+{
+  "name" : "ocean",
+
+  "effectConfig" : {
+  "biomeTempNight" : 1500,
+	"biomeTempDay" : 4500,
+  "biomeTempRatePer10Sec" : 60
+  },
+	"defaultDuration" : 10,
+
+  "scripts" : [
+    "biomeTemperature.lua"
+  ],
+
+  "label" : "Moderate Biome",
+  "icon" : "/interface/statuses/tempBiomeModerate.png"
+}

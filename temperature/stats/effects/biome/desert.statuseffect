@@ -1,0 +1,17 @@
+{
+  "name" : "desert",
+
+  "effectConfig" : {
+  "biomeTempNight" : 1500,
+	"biomeTempDay" : 5000,
+  "biomeTempRatePer10Sec" : 50
+  },
+	"defaultDuration" : 10,
+
+  "scripts" : [
+    "biomeTemperature.lua"
+  ],
+
+  "label" : "Hot Biome",
+  "icon" : "/interface/statuses/tempBiomeHot.png"
+}

@@ -1,0 +1,17 @@
+{
+  "name" : "toxicBiome",
+
+  "effectConfig" : {
+  "biomeTempNight" : 3500,
+	"biomeTempDay" : 5000,
+  "biomeTempRatePer10Sec" :  90
+  },
+	"defaultDuration" : 10,
+
+  "scripts" : [
+    "biomeTemperature.lua"
+  ],
+
+  "label" : "Hot Biome",
+  "icon" : "/interface/statuses/tempBiomeHot.png"
+}
