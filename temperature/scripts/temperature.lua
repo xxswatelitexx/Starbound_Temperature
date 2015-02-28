@@ -10,7 +10,7 @@ function init()
 	tempDegenPL = 0
 	self.tickTimer = 1
 	self.playerDied = true
-	if playerDied == true then
+	if self.playerDied == true then
 		status.setResource("temperature", status.resourceMax("temperature") * 0.5)
 		self.playerDied = false
 	end
@@ -24,8 +24,8 @@ function update(dt)
 	self.timerTx = self.timerTx - dt
 	if self.timerTx <= 0 then
 	self.timerTx = 5
-	world.logInfo(tostring(status.resource("temperature")).." Player Temperature")
-	world.logInfo(tostring(status.stat("armorColdMax")).." Armor Cold Max")
+	--world.logInfo(tostring(status.resource("temperature")).." Player Temperature")
+	--world.logInfo(tostring(status.stat("armorColdMax")).." Armor Cold Max")
 		if status.resource("temperature") < status.resourceMax("temperature") * 0.25 then
 		status.addEphemeralEffect("freezingTemp")
 		tempMod = tempMod - 0.1
@@ -68,10 +68,7 @@ function update(dt)
   mcontroller.controlParameters({
       normalGroundFriction = tempModGF
     })
-	
 
-	
-	
 	if status.resource("health") <= 0 then
 		self.playerDied = true
 	end

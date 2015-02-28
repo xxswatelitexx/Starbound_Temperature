@@ -1,0 +1,8 @@
+[ {
+"op" : "add",
+"path" : "/effects/0/-",
+"value" : {
+        "effect" : "foodTempHot",
+        "foodTemp" : 200
+    }
+} ]

@@ -12,11 +12,10 @@ function init()
 	biomeTimer = 10
 	biomeDate = world.day()
 	biomeTimerRV = 30
-	coldModCalc = -biomeTempRate * (status.resource("armorCold") / 100)
-	hotModCalc = biomeTempRate * (status.resource("armorHeat") / 100 )
+
 end
 
-function update(dt)
+function update(dt)	
 	--Checks if Day has changed to set new temperature values--
 	biomeTimerRV = biomeTimerRV - dt
 	if biomeTimerRV <= 0 then
@@ -32,26 +31,25 @@ function update(dt)
 			biomeTemp = biomeTemp - math.random(biomeTempRate - 10, biomeTempRate + 10)
 		end
 		world.setProperty("biomeTemperature", biomeTemp)
+		world.logInfo(tostring(biomeTemp).." Biome Temperature")
 	end
-		
+
 	-- Temperature Change
 	biomeTimer = biomeTimer - dt
   if biomeTimer <= 0 then
     biomeTimer = 10
-	  world.logInfo(tostring(biomeTemp).." Biome Temperature")
 		if status.resource("temperature") > biomeTemp then 
-		status.modifyResource("temperature", coldModCalc) 
+		status.modifyResource("temperature", -biomeTempRate * (1 - (status.resource("armorCold") / 100))) 
+		world.logInfo(tostring(status.resource("temperature")).."Making player Colder")
 		else return
 		end
 		
 		if status.resource("temperature") < biomeTemp then 
-		status.modifyResource("temperature", hotModCalc) 
+		status.modifyResource("temperature", biomeTempRate * (1 - (status.resource("armorHeat") / 100 ))) 
+		world.logInfo(tostring(status.resource("temperature")).."Making player Warmer")
 		else return 
 		end
 	end
-	
-	
-	
   
 end
 

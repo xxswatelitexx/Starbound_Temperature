@@ -11,6 +11,11 @@
 	},
 	{
 		"op" : "add",
+		"path" : "/statusControllerSettings/stats/enviroTemperature",
+		"value" : { "baseValue" : 0}
+	},
+	{
+		"op" : "add",
 		"path" : "/statusControllerSettings/resources/temperature",
 		"value" : {
        "maxStat" : "maxTemperature",
@@ -51,25 +56,10 @@
 		"op" : "add",
 		"path" : "/statusControllerSettings/resources/armorHeat",
 		"value" : {
-       "maxStat" : "armorHeatdMax",
+       "maxStat" : "armorHeatMax",
        "deltaStat" : "armorHeatRate",
        "initialPercentage" : 1.0
 		} 
-	},
-	{
-		"op" : "add",
-		"path" : "/statusControllerSettings/stats/armorPoisonMax",
-		"value" : { "baseValue" : 0}
-	},
-	{
-		"op" : "add",
-		"path" : "/statusControllerSettings/stats/armorAcidMax",
-		"value" : { "baseValue" : 0}
-	},
-	{
-		"op" : "add",
-		"path" : "/statusControllerSettings/stats/armorFireMax",
-		"value" : { "baseValue" : 0}
 	},
 	{
 		"op" : "add",

@@ -1,11 +1,11 @@
 {
-  "projectileName" : "snowTemp",
+  "projectileName" : "emberTemp",
   "physics" : "grenade",
-  "frames" : "snow.png",
+  "frames" : "ember.png",
   "animationCycle" : 0.5,
   "frameNumber" : 2,
 	"statusEffects" : [
-    "snowTemp"
+    "emberTemp"
   ],
 
   "onlyHitTerrain" : false

@@ -9,7 +9,7 @@ function update(dt)
 	status.modifyResource("temperature", self.foodHeat * dt)
 	self.tickTimer = self.tickTimer - dt
 	if self.tickTimer <= 0 then
-	self.tickTimer = 5
+		self.tickTimer = 5
     world.logInfo(status.resource("temperature").." Temperature after Effect")
 		world.logInfo(tostring(self.temperatureMod * dt).." Effect Calculation")
 end

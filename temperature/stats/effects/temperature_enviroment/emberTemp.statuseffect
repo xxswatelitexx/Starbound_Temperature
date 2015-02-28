@@ -1,7 +1,7 @@
 {
-  "name" : "snowTemp",
+  "name" : "emberTemp",
   "effectConfig" : {
-	"particleTempTemp" : -12.5
+	"particleTemp" : 8
 	},
   "defaultDuration" : 10,
 

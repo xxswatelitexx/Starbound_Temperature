@@ -1,17 +1,17 @@
 [ {
 "op" : "add",
-"path" : "/projectiles",
-"value" : [
+"path" : "/projectiles/-",
+"value" : 
 {
       "projectile" : "snowTemp",
       "parameters" : {
         "power" : 0
       },
-      "velocity" : [0, -3.75],
-      "ratePerX" : 0.015,
+      "velocity" : [0, -30],
+      "ratePerX" : 0.025,
       "spawnAboveRegion" : 30,
       "spawnHorizontalPad" : 30,
       "windAffectAmount" : 1.0
-    } ]
+    } 
 }
 ]
