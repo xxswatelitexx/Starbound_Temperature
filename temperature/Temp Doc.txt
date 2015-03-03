@@ -9,10 +9,10 @@ into your modinfo file. This will allow cross compatibility with other mods inst
 ###PLAYER.CONFIG CHANGES
 ####STATS
 *maxTemperature - maximum temperature the player has
-*rateTemperature - the delta rate modifier everytime temperature is calculated
-*enviroTemperature - an experimental calculation which lets you modify temperature based on the type of enviroment ( inside building \ underground \ etc )
+*rateTemperature - the delta rate modifier every time temperature is calculated
+*enviroTemperature - an experimental calculation which lets you modify temperature based on the type of environment ( inside building \ underground \ etc )
 *armorColdMax - temperature modifier given by armor which is applied anytime cold effect is applied ( positive for resistance, negative for weakness )
-*armorHeatMax - temperature modifier given by armor which is applied anytime heat effect is applied ( positive for resisitance, negative for weaknss )
+*armorHeatMax - temperature modifier given by armor which is applied anytime heat effect is applied ( positive for resistance, negative for weaknss )
 *armorColdRate - do not use
 *armorHeatRate - do not use
 

@@ -13,6 +13,7 @@ function update(dt)
     world.logInfo(status.resource("temperature").." Temperature after Effect")
 		world.logInfo(tostring(self.temperatureMod * dt).." Effect Calculation")
 end
+end
 
 function uninit()
 
